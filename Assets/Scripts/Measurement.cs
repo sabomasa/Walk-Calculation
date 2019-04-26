@@ -138,19 +138,19 @@ public class Measurement : MonoBehaviour
     private bool headerWrite = true; //ヘッダー書き込みを一度だけ行うための変数
     public void LogSave()
     {
-        StreamWriter sw = new StreamWriter(@"キャリブレーションしたらすぐ歩くUnity.csv", true, Encoding.GetEncoding("Shift_JIS"));
+        StreamWriter sw = new StreamWriter(@"Jibun_normal_Unity.csv", true, Encoding.GetEncoding("Shift_JIS"));
         if (headerWrite == true)
         {
             // ヘッダー出力
             string[] s1 = {
+                /*
             "Head_Q",
             "RightShoulder_Q", "RightArm_Q", "RightForeArm_Q", "RightHand_Q",
             "LeftShoulder_Q", "LeftArm_Q", "LeftForeArm_Q", "LeftHand_Q",
             "Hip_Q", "Spine_Q",
             "RightUpLeg_Q", "RightLeg_Q", "RightFoot_Q",
             "LeftUpLeg_Q", "LeftLeg_Q", "LeftFoot_Q",
-
-            " ",
+            */
 
             "Head_Q_w",
             "RightShoulder_Q_w", "RightArm_Q_w", "RightForeArm_Q_w", "RightHand_Q_w",
@@ -159,16 +159,12 @@ public class Measurement : MonoBehaviour
             "RightUpLeg_Q_w", "RightLeg_Q_w", "RightFoot_Q_w",
             "LeftUpLeg_Q_w", "LeftLeg_Q_w", "LeftFoot_Q_w",
 
-            " ",
-
             "Head_Q_x",
             "RightShoulder_Q_x", "RightArm_Q_x", "RightForeArm_Q_x", "RightHand_Q_x",
             "LeftShoulder_Q_x", "LeftArm_Q_x", "LeftForeArm_Q_x", "LeftHand_Q_x",
             "Hip_Q_x", "Spine_Q_x",
             "RightUpLeg_Q_x", "RightLeg_Q_x", "RightFoot_Q_x",
             "LeftUpLeg_Q_x", "LeftLeg_Q_x", "LeftFoot_Q_x",
-
-            " ",
 
             "Head_Q_y",
             "RightShoulder_Q_y", "RightArm_Q_y", "RightForeArm_Q_y", "RightHand_Q_y",
@@ -177,16 +173,12 @@ public class Measurement : MonoBehaviour
             "RightUpLeg_Q_y", "RightLeg_Q_y", "RightFoot_Q_y",
             "LeftUpLeg_Q_y", "LeftLeg_Q_y", "LeftFoot_Q_y",
 
-            " ",
-
             "Head_Q_z",
             "RightShoulder_Q_z", "RightArm_Q_z", "RightForeArm_Q_z", "RightHand_Q_z",
             "LeftShoulder_Q_z", "LeftArm_Q_z", "LeftForeArm_Q_z", "LeftHand_Q_z",
             "Hip_Q_z", "Spine_Q_z",
             "RightUpLeg_Q_z", "RightLeg_Q_z", "RightFoot_Q_z",
             "LeftUpLeg_Q_z", "LeftLeg_Q_z", "LeftFoot_Q_z",
-
-            " ",
 
             /*
             "Head_v",
@@ -234,14 +226,15 @@ public class Measurement : MonoBehaviour
         // データ出力
         string[] str = {
             //初期クオータニオンと，現在のクオータニオンの角度を出力
+            /*
             GetLocalQuaternion(headQuaternion).ToString(),
             GetLocalQuaternion(rightShoulderQuaternion).ToString(), GetLocalQuaternion(rightArmQuaternion).ToString(), GetLocalQuaternion(rightForeArmQuaternion).ToString(), GetLocalQuaternion(rightHandQuaternion).ToString(),
             GetLocalQuaternion(leftShoulderQuaternion).ToString(), GetLocalQuaternion(leftArmQuaternion).ToString(), GetLocalQuaternion(leftForeArmQuaternion).ToString(), GetLocalQuaternion(leftHandQuaternion).ToString(),
             GetLocalQuaternion(hipsQuaternion).ToString(), GetLocalQuaternion(spineQuaternion).ToString(),
             GetLocalQuaternion(rightUpLegQuaternion).ToString(), GetLocalQuaternion(rightLegQuaternion).ToString(), GetLocalQuaternion(rightFootQuaternion).ToString(),
             GetLocalQuaternion(leftUpLegQuaternion).ToString(), GetLocalQuaternion(leftLegQuaternion).ToString(), GetLocalQuaternion(leftFootQuaternion).ToString(),
+            */
 
-            " ",
             //クオータニオンの実数部wを出力
             headQuaternion.w.ToString(),
             rightShoulderQuaternion.w.ToString(), rightArmQuaternion.w.ToString(), rightForeArmQuaternion.w.ToString(), rightHandQuaternion.w.ToString(),
@@ -250,8 +243,6 @@ public class Measurement : MonoBehaviour
             rightUpLegQuaternion.w.ToString(), rightLegQuaternion.w.ToString(), rightFootQuaternion.w.ToString(),
             leftUpLegQuaternion.w.ToString(), leftLegQuaternion.w.ToString(), leftFootQuaternion.w.ToString(),
 
-            " ",
-
             //クオータニオンの回転軸xを出力
             headQuaternion.x.ToString(),
             rightShoulderQuaternion.x.ToString(), rightArmQuaternion.x.ToString(), rightForeArmQuaternion.x.ToString(), rightHandQuaternion.x.ToString(),
@@ -259,9 +250,7 @@ public class Measurement : MonoBehaviour
             hipsQuaternion.x.ToString(), spineQuaternion.x.ToString(),
             rightUpLegQuaternion.x.ToString(), rightLegQuaternion.x.ToString(), rightFootQuaternion.x.ToString(),
             leftUpLegQuaternion.x.ToString(), leftLegQuaternion.x.ToString(), leftFootQuaternion.x.ToString(),
-
-            " ",
-
+            
             //クオータニオンの回転軸yを出力
             headQuaternion.y.ToString(),
             rightShoulderQuaternion.y.ToString(), rightArmQuaternion.y.ToString(), rightForeArmQuaternion.y.ToString(), rightHandQuaternion.y.ToString(),
@@ -270,8 +259,6 @@ public class Measurement : MonoBehaviour
             rightUpLegQuaternion.y.ToString(), rightLegQuaternion.y.ToString(), rightFootQuaternion.y.ToString(),
             leftUpLegQuaternion.y.ToString(), leftLegQuaternion.y.ToString(), leftFootQuaternion.y.ToString(),
 
-            " ",
-
             //クオータニオンの回転軸zを出力
             headQuaternion.z.ToString(),
             rightShoulderQuaternion.z.ToString(), rightArmQuaternion.z.ToString(), rightForeArmQuaternion.z.ToString(), rightHandQuaternion.z.ToString(),
@@ -279,8 +266,6 @@ public class Measurement : MonoBehaviour
             hipsQuaternion.z.ToString(), spineQuaternion.z.ToString(),
             rightUpLegQuaternion.z.ToString(), rightLegQuaternion.z.ToString(), rightFootQuaternion.z.ToString(),
             leftUpLegQuaternion.z.ToString(), leftLegQuaternion.z.ToString(), leftFootQuaternion.z.ToString(),
-
-            " ",
 
             /*
 
