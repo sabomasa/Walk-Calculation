@@ -138,7 +138,7 @@ public class Measurement : MonoBehaviour
     private bool headerWrite = true; //ヘッダー書き込みを一度だけ行うための変数
     public void LogSave()
     {
-        StreamWriter sw = new StreamWriter(@"Jibun_normal_Unity.csv", true, Encoding.GetEncoding("Shift_JIS"));
+        StreamWriter sw = new StreamWriter(@"March_Parkinson_normal_sort_Unity.csv", true, Encoding.GetEncoding("Shift_JIS"));
         if (headerWrite == true)
         {
             // ヘッダー出力
@@ -151,34 +151,65 @@ public class Measurement : MonoBehaviour
             "RightUpLeg_Q", "RightLeg_Q", "RightFoot_Q",
             "LeftUpLeg_Q", "LeftLeg_Q", "LeftFoot_Q",
             */
+            
+            
+            
+            
+            
+            
 
-            "Head_Q_w",
-            "RightShoulder_Q_w", "RightArm_Q_w", "RightForeArm_Q_w", "RightHand_Q_w",
-            "LeftShoulder_Q_w", "LeftArm_Q_w", "LeftForeArm_Q_w", "LeftHand_Q_w",
-            "Hip_Q_w", "Spine_Q_w",
-            "RightUpLeg_Q_w", "RightLeg_Q_w", "RightFoot_Q_w",
-            "LeftUpLeg_Q_w", "LeftLeg_Q_w", "LeftFoot_Q_w",
+            
+      
+         
+           
+          
+       
+            
+         
+           
+             
+          
+       
 
-            "Head_Q_x",
-            "RightShoulder_Q_x", "RightArm_Q_x", "RightForeArm_Q_x", "RightHand_Q_x",
-            "LeftShoulder_Q_x", "LeftArm_Q_x", "LeftForeArm_Q_x", "LeftHand_Q_x",
-            "Hip_Q_x", "Spine_Q_x",
-            "RightUpLeg_Q_x", "RightLeg_Q_x", "RightFoot_Q_x",
-            "LeftUpLeg_Q_x", "LeftLeg_Q_x", "LeftFoot_Q_x",
+           
+            
+           
+           
+        
+       
 
-            "Head_Q_y",
-            "RightShoulder_Q_y", "RightArm_Q_y", "RightForeArm_Q_y", "RightHand_Q_y",
-            "LeftShoulder_Q_y", "LeftArm_Q_y", "LeftForeArm_Q_y", "LeftHand_Q_y",
-            "Hip_Q_y", "Spine_Q_y",
-            "RightUpLeg_Q_y", "RightLeg_Q_y", "RightFoot_Q_y",
-            "LeftUpLeg_Q_y", "LeftLeg_Q_y", "LeftFoot_Q_y",
+            //左下肢
+            "LeftUpLeg_Q_w", "LeftUpLeg_Q_x",   "LeftUpLeg_Q_y", "LeftUpLeg_Q_z",
+            "LeftLeg_Q_w",  "LeftLeg_Q_x", "LeftLeg_Q_y",  "LeftLeg_Q_z",
+            "LeftFoot_Q_w",   "LeftFoot_Q_x",  "LeftFoot_Q_y",  "LeftFoot_Q_z",
 
-            "Head_Q_z",
-            "RightShoulder_Q_z", "RightArm_Q_z", "RightForeArm_Q_z", "RightHand_Q_z",
-            "LeftShoulder_Q_z", "LeftArm_Q_z", "LeftForeArm_Q_z", "LeftHand_Q_z",
-            "Hip_Q_z", "Spine_Q_z",
-            "RightUpLeg_Q_z", "RightLeg_Q_z", "RightFoot_Q_z",
-            "LeftUpLeg_Q_z", "LeftLeg_Q_z", "LeftFoot_Q_z",
+
+
+            //左上肢
+            "LeftShoulder_Q_w", "LeftShoulder_Q_x", "LeftShoulder_Q_y","LeftShoulder_Q_z", 
+                "LeftArm_Q_w", "LeftArm_Q_x", "LeftArm_Q_y", "LeftArm_Q_z",
+                "LeftForeArm_Q_w", "LeftForeArm_Q_x","LeftForeArm_Q_y","LeftForeArm_Q_z",
+                "LeftHand_Q_w", "LeftHand_Q_x", "LeftHand_Q_y","LeftHand_Q_z",
+                
+                //体幹
+                 "Hip_Q_w", "Hip_Q_x","Hip_Q_y","Hip_Q_z",
+                 "Spine_Q_w", "Spine_Q_x","Spine_Q_y",  "Spine_Q_z",
+                "Head_Q_w","Head_Q_x","Head_Q_y", "Head_Q_z",
+
+            //右上肢
+            "RightShoulder_Q_w", "RightShoulder_Q_x","RightShoulder_Q_y","RightShoulder_Q_z",
+                "RightArm_Q_w", "RightArm_Q_x", "RightArm_Q_y","RightArm_Q_z",
+                "RightForeArm_Q_w", "RightForeArm_Q_x", "RightForeArm_Q_y","RightForeArm_Q_z",
+                "RightHand_Q_w", "RightHand_Q_x", "RightHand_Q_y","RightHand_Q_z",
+
+            //右下肢
+            "RightUpLeg_Q_w", "RightUpLeg_Q_x",  "RightUpLeg_Q_y", "RightUpLeg_Q_z",
+                "RightLeg_Q_w","RightLeg_Q_x", "RightLeg_Q_y", "RightLeg_Q_z",
+                "RightFoot_Q_w",  "RightFoot_Q_x","RightFoot_Q_y",   "RightFoot_Q_z",
+
+
+
+
 
             /*
             "Head_v",
@@ -233,39 +264,40 @@ public class Measurement : MonoBehaviour
             GetLocalQuaternion(hipsQuaternion).ToString(), GetLocalQuaternion(spineQuaternion).ToString(),
             GetLocalQuaternion(rightUpLegQuaternion).ToString(), GetLocalQuaternion(rightLegQuaternion).ToString(), GetLocalQuaternion(rightFootQuaternion).ToString(),
             GetLocalQuaternion(leftUpLegQuaternion).ToString(), GetLocalQuaternion(leftLegQuaternion).ToString(), GetLocalQuaternion(leftFootQuaternion).ToString(),
-            */
-
-            //クオータニオンの実数部wを出力
-            headQuaternion.w.ToString(),
-            rightShoulderQuaternion.w.ToString(), rightArmQuaternion.w.ToString(), rightForeArmQuaternion.w.ToString(), rightHandQuaternion.w.ToString(),
-            leftShoulderQuaternion.w.ToString(), leftArmQuaternion.w.ToString(), leftForeArmQuaternion.w.ToString(), leftHandQuaternion.w.ToString(),
-            hipsQuaternion.w.ToString(), spineQuaternion.w.ToString(),
-            rightUpLegQuaternion.w.ToString(), rightLegQuaternion.w.ToString(), rightFootQuaternion.w.ToString(),
-            leftUpLegQuaternion.w.ToString(), leftLegQuaternion.w.ToString(), leftFootQuaternion.w.ToString(),
-
-            //クオータニオンの回転軸xを出力
-            headQuaternion.x.ToString(),
-            rightShoulderQuaternion.x.ToString(), rightArmQuaternion.x.ToString(), rightForeArmQuaternion.x.ToString(), rightHandQuaternion.x.ToString(),
-            leftShoulderQuaternion.x.ToString(), leftArmQuaternion.x.ToString(), leftForeArmQuaternion.x.ToString(), leftHandQuaternion.x.ToString(),
-            hipsQuaternion.x.ToString(), spineQuaternion.x.ToString(),
-            rightUpLegQuaternion.x.ToString(), rightLegQuaternion.x.ToString(), rightFootQuaternion.x.ToString(),
-            leftUpLegQuaternion.x.ToString(), leftLegQuaternion.x.ToString(), leftFootQuaternion.x.ToString(),
+            */       
             
-            //クオータニオンの回転軸yを出力
-            headQuaternion.y.ToString(),
-            rightShoulderQuaternion.y.ToString(), rightArmQuaternion.y.ToString(), rightForeArmQuaternion.y.ToString(), rightHandQuaternion.y.ToString(),
-            leftShoulderQuaternion.y.ToString(), leftArmQuaternion.y.ToString(), leftForeArmQuaternion.y.ToString(), leftHandQuaternion.y.ToString(),
-            hipsQuaternion.y.ToString(), spineQuaternion.y.ToString(),
-            rightUpLegQuaternion.y.ToString(), rightLegQuaternion.y.ToString(), rightFootQuaternion.y.ToString(),
-            leftUpLegQuaternion.y.ToString(), leftLegQuaternion.y.ToString(), leftFootQuaternion.y.ToString(),
+            
 
-            //クオータニオンの回転軸zを出力
-            headQuaternion.z.ToString(),
-            rightShoulderQuaternion.z.ToString(), rightArmQuaternion.z.ToString(), rightForeArmQuaternion.z.ToString(), rightHandQuaternion.z.ToString(),
-            leftShoulderQuaternion.z.ToString(), leftArmQuaternion.z.ToString(), leftForeArmQuaternion.z.ToString(), leftHandQuaternion.z.ToString(),
-            hipsQuaternion.z.ToString(), spineQuaternion.z.ToString(),
-            rightUpLegQuaternion.z.ToString(), rightLegQuaternion.z.ToString(), rightFootQuaternion.z.ToString(),
-            leftUpLegQuaternion.z.ToString(), leftLegQuaternion.z.ToString(), leftFootQuaternion.z.ToString(),
+
+
+            //左下肢
+            leftUpLegQuaternion.w.ToString(),leftUpLegQuaternion.x.ToString(),leftUpLegQuaternion.y.ToString(),leftUpLegQuaternion.z.ToString(),
+            leftLegQuaternion.w.ToString(),leftLegQuaternion.x.ToString(),leftLegQuaternion.y.ToString(),leftLegQuaternion.z.ToString(),
+            leftFootQuaternion.w.ToString(),leftFootQuaternion.x.ToString(),leftFootQuaternion.y.ToString(), leftFootQuaternion.z.ToString(),
+            //左上肢
+            leftShoulderQuaternion.w.ToString(),leftShoulderQuaternion.x.ToString(),leftShoulderQuaternion.y.ToString(),leftShoulderQuaternion.z.ToString(),
+            leftArmQuaternion.w.ToString(),leftArmQuaternion.x.ToString(),leftArmQuaternion.y.ToString(),leftArmQuaternion.z.ToString(),
+            leftForeArmQuaternion.w.ToString(),leftForeArmQuaternion.x.ToString(),leftForeArmQuaternion.y.ToString(),leftForeArmQuaternion.z.ToString(),
+            leftHandQuaternion.w.ToString(), leftHandQuaternion.x.ToString(),leftHandQuaternion.y.ToString(), leftHandQuaternion.z.ToString(),
+
+            //体幹
+            hipsQuaternion.w.ToString(),hipsQuaternion.x.ToString(),hipsQuaternion.y.ToString(),hipsQuaternion.z.ToString(),
+            spineQuaternion.w.ToString(),spineQuaternion.x.ToString(),spineQuaternion.y.ToString(),spineQuaternion.z.ToString(),
+            headQuaternion.w.ToString(),headQuaternion.x.ToString(),headQuaternion.y.ToString(),headQuaternion.z.ToString(),
+
+            //右上肢
+            rightShoulderQuaternion.w.ToString(),rightShoulderQuaternion.x.ToString(),rightShoulderQuaternion.y.ToString(),rightShoulderQuaternion.z.ToString(),
+            rightArmQuaternion.w.ToString(),rightArmQuaternion.x.ToString(), rightArmQuaternion.y.ToString(), rightArmQuaternion.z.ToString(),
+            rightForeArmQuaternion.w.ToString(),rightForeArmQuaternion.x.ToString(),rightForeArmQuaternion.y.ToString(),rightForeArmQuaternion.z.ToString(),
+            rightHandQuaternion.w.ToString(),rightHandQuaternion.x.ToString(),rightHandQuaternion.y.ToString(),rightHandQuaternion.z.ToString(),
+
+            //右下肢
+            rightUpLegQuaternion.w.ToString(), rightUpLegQuaternion.x.ToString(), rightUpLegQuaternion.y.ToString(), rightUpLegQuaternion.z.ToString(),
+            rightLegQuaternion.w.ToString(),rightLegQuaternion.x.ToString(), rightLegQuaternion.y.ToString(),  rightLegQuaternion.z.ToString(),
+            rightFootQuaternion.w.ToString(),rightFootQuaternion.x.ToString(),rightFootQuaternion.y.ToString(), rightFootQuaternion.z.ToString(),
+
+            
+            
 
             /*
 
