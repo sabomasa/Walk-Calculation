@@ -1,0 +1,4 @@
+import UnityEngine
+from UnityEngine import *
+
+UnityEngine.Debug.Log("Hello World")
