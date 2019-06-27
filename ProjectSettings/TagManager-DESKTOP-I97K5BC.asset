@@ -4,44 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RightHand
-  - RightForeArm
-  - RightArm
   - RightShoulder
-  - LeftHand
   - LeftShoulder
-  - LeftForeArm
+  - RightArm
   - LeftArm
+  - RightForeArm
+  - LeftForeArm
+  - RightHand
   - Hips
-  - Head
   - RightUpLeg
-  - RightLeg
-  - RightFoot
-  - RightToeBase
   - LeftUpLeg
+  - RightLeg
   - LeftLeg
+  - RightFoot
   - LeftFoot
+  - RightToeBase
   - LeftToeBase
-  - Spine
-  - RightHand1
-  - RightForeArm1
-  - RightArm1
-  - RightShoulder1
-  - LeftHand1
-  - LeftShoulder1
-  - LeftForeArm1
-  - LeftArm1
-  - Hips1
-  - Head1
-  - RightUpLeg1
-  - RightLeg1
-  - RightFoot1
-  - RightToeBase1
-  - LeftUpLeg1
-  - LeftLeg1
-  - LeftFoot1
-  - LeftToeBase1
-  - Spine1
+  - LeftHand
+  - Head
   layers:
   - Default
   - TransparentFX
@@ -51,7 +31,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 

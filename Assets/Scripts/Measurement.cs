@@ -138,7 +138,7 @@ public class Measurement : MonoBehaviour
     private bool headerWrite = true; //ヘッダー書き込みを一度だけ行うための変数
     public void LogSave()
     {
-        StreamWriter sw = new StreamWriter(@"March_Parkinson_normal_sort_Unity.csv", true, Encoding.GetEncoding("Shift_JIS"));
+        StreamWriter sw = new StreamWriter(@"Jikken.csv", true, Encoding.GetEncoding("Shift_JIS"));
         if (headerWrite == true)
         {
             // ヘッダー出力
