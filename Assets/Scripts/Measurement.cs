@@ -95,6 +95,7 @@ public class Measurement : MonoBehaviour
             LogSave();
             Savetmp();
         }
+
     }
 
 
@@ -138,7 +139,14 @@ public class Measurement : MonoBehaviour
     private bool headerWrite = true; //ヘッダー書き込みを一度だけ行うための変数
     public void LogSave()
     {
-        StreamWriter sw = new StreamWriter(@"Jikken.csv", true, Encoding.GetEncoding("Shift_JIS"));
+        StreamWriter sw;
+        FileInfo fi;
+        string fileName = "hihi_kakehi.csv";
+        fi = new FileInfo(fileName);
+        sw = fi.AppendText();
+        //StreamWriter sw = new StreamWriter(@"#1haihai_kakehi.csv", append : true);
+        //var fs = new FileStream(@ "hihi_kakehi.csv", FileAccess.ReadWrite);
+        //var sw = new StreamWriter()
         if (headerWrite == true)
         {
             // ヘッダー出力
@@ -252,7 +260,10 @@ public class Measurement : MonoBehaviour
             sw.WriteLine(s2);
             headerWrite = false;
             Savetmp();
+            Debug.Log("yes1");
         }
+
+        Debug.Log("yes2");
 
         // データ出力
         string[] str = {
@@ -339,11 +350,14 @@ public class Measurement : MonoBehaviour
             GetDeltaLocalEulerAngles(rightUpLeg.transform.localEulerAngles.z).ToString(), GetDeltaLocalEulerAngles(rightLeg.transform.localEulerAngles.z).ToString(), GetDeltaLocalEulerAngles(rightFoot.transform.localEulerAngles.z).ToString(),
             GetDeltaLocalEulerAngles(leftUpLeg.transform.localEulerAngles.z).ToString(), GetDeltaLocalEulerAngles(leftLeg.transform.localEulerAngles.z).ToString(), GetDeltaLocalEulerAngles(leftFoot.transform.localEulerAngles.z).ToString(),
         */
-        }; 
+        
+        };
+        Debug.Log("yes3");
         string str2 = string.Join(",", str);
         sw.WriteLine(str2);
-        // StreamWriterを閉じる
+        sw.Flush();
         sw.Close();
+
     }
 
 
@@ -399,6 +413,7 @@ public class Measurement : MonoBehaviour
         if(GUI.Button(new Rect(200, 20, 100, 50), "End"))
         {
             startFlag = false;
+
         }
     }
 
