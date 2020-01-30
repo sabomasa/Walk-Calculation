@@ -32,7 +32,7 @@ public class PrincipalComponentVisualizer_SelectBoneObject : MonoBehaviour
     public GameObject leftHand;
 
     //腰,頭
-    //public GameObject hips;
+    public GameObject hips;
     public GameObject head;
     public GameObject spine;
 
@@ -207,7 +207,7 @@ public class PrincipalComponentVisualizer_SelectBoneObject : MonoBehaviour
             leftForeArm.transform.localRotation = leftLowerArm_quaternion;
             leftHand.transform.localRotation = leftHand_quaternion;
 
-            //hips.transform.localRotation = hips_quaternion;
+            hips.transform.localRotation = hips_quaternion;
             spine.transform.localRotation = spine_quaternion;
             head.transform.localRotation = head_quaternion;
 
