@@ -46,6 +46,7 @@ public class Measurement : MonoBehaviour
     Quaternion startQuaternion;
 
     private bool startFlag = false;
+    public string csvFileName = "kakehi_aruku_hasiru";
 
 
     //速さ計算用に一時的に記録しておくための変数
@@ -141,7 +142,7 @@ public class Measurement : MonoBehaviour
     {
         StreamWriter sw;
         FileInfo fi;
-        string fileName = "hihi_kakehi.csv";
+        string fileName = csvFileName+".csv";
         fi = new FileInfo(fileName);
         sw = fi.AppendText();
         //StreamWriter sw = new StreamWriter(@"#1haihai_kakehi.csv", append : true);

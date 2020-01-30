@@ -6,7 +6,7 @@ using UnityEngine;
 public class PrincipalComponentVisualizer_SelectBoneObject : MonoBehaviour
 {
     private int t = 0;
-    public float timeOut = 0.02f;
+    public float timeOut = 1/60f;
     //public int principalComponent = 1;
     public string fileName;
 
@@ -108,6 +108,7 @@ public class PrincipalComponentVisualizer_SelectBoneObject : MonoBehaviour
         }
 
         */
+        Application.targetFrameRate = 60;
 
         //ためしにPCAにかける前のモーションデータをそのままアバターに入れてみる
         var csvFile = Resources.Load("csv/" + fileName) as TextAsset;
